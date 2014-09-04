@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 var fs = require("fs")
-var words = require("an-array-of-english-words")
+var profanity = require('badwords-list').regex
+var words = require("an-array-of-english-words").filter(function(w){ return !w.match(profanity) })
 
 fs.writeFileSync("./npm.json", JSON.stringify({
   n: words.filter(function(w){return w.match(/^n/)}),

@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/zeke/n-p-m",
   "dependencies": {
-    "an-array-of-english-words": "^1.0.0"
+    "an-array-of-english-words": "^1.0.0",
+    "badwords-list": "^1.0.0"
   }
 }
