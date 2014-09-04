@@ -11,7 +11,7 @@ html
         $.getJSON("/npm.json", function(words){
           window.words = words
 
-          $(document).on("click", "ul.words a", function(event){
+          $(document).on("mouseup", "ul.words a", function(event){
             console.log(event)
             console.log($(this).text())
             $(this).closest("ul.letters > li").find("input").val($(this).text()).change()
