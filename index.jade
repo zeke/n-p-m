@@ -29,7 +29,7 @@ html
             }
 
             var letter = $(this).attr('name')
-            var pattern = new RegExp("^"+q, "i")
+            var pattern = new RegExp(q, "i")
             var results = words[letter]
               .filter(function(w){return !!w.match(pattern)})
               .slice(0,10);
