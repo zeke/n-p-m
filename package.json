@@ -7,6 +7,7 @@
     "n-p-m": "build.js"
   },
   "scripts": {
+    "start": "harp server",
     "build": "./bin/build.js"
   },
   "repository": {
@@ -29,6 +30,7 @@
   "homepage": "https://n-p-m.com",
   "dependencies": {
     "an-array-of-english-words": "^1.0.0",
-    "badwords-list": "^1.0.0"
+    "badwords-list": "^1.0.0",
+    "harp": "^0.13.0"
   }
 }
