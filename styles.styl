@@ -1,0 +1,71 @@
+npmred = #cb3837
+
+*, *:before, *:after
+  -moz-box-sizing border-box
+  -webkit-box-sizing border-box
+  box-sizing border-box
+
+body
+  font-family "Helvetica Neue", "Source Sans Pro"
+  font-weight bold
+  background npmred
+  color white
+  font-size 24px
+
+ul
+  margin 0
+  padding 0
+  list-style none
+
+ul.letters
+  position relative
+  max-width 900px
+  margin 100px auto
+  // background black
+  float none
+  clear both
+  overflow hidden
+  > li
+    display block
+    float left
+    width 33%
+    // max-width 33%
+    max-height 400px
+    overflow hidden
+
+ul.words
+  li
+    line-height 1.4
+    a
+      transition all 0.2s
+      border-radius 3px
+      padding 5px
+      color rgba(white, 0.4)
+      text-decoration none
+      &:hover
+        color white
+
+input
+  font-family "Helvetica Neue", "Source Sans Pro"
+  font-weight bold
+  background none
+  color white
+  width 100%
+  padding 3px 5px
+  font-size 24px
+  // border-radius 4px
+  outline none
+  border none
+  // border-bottom 3px solid rgba(white, 1)
+
+::-webkit-input-placeholder
+   color rgba(white, 0.4)
+
+:-moz-placeholder
+   color rgba(white, 0.4)
+
+::-moz-placeholder
+   color rgba(white, 0.4)
+
+:-ms-input-placeholder
+   color rgba(white, 0.4)

@@ -1,0 +1,45 @@
+html
+  head
+    title What does npm stand for?
+    link(href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Source+Code+Pro:400,600' rel='stylesheet' type='text/css')
+    link(rel="stylesheet" href="/styles.css" type="text/css")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+
+    script.
+
+      $(function(){
+        $.getJSON("/npm.json", function(words){
+          window.words = words
+
+          $(document).on("click", "ul.words a", function(event){
+            console.log(event)
+            console.log($(this).text())
+            $(this).closest("ul.letters > li").find("input").val($(this).text()).change()
+            event.preventDefault()
+          })
+
+          $(document).on("keyup change", "input", function(event){
+            var q = $(this).val()
+            if (!q) return
+            var letter = $(this).attr('name')
+            var pattern = new RegExp("^"+q, "i")
+            var results = words[letter]
+              .filter(function(w){return !!w.match(pattern)})
+              .slice(0,10);
+            //- console.log(results)
+            $("ul.letters li."+letter+" ul.words").html(results.map(function(word){
+              return "<li><a href=\"#\">" + word + "</a></li>"
+            }))
+          })
+
+
+        })
+      })
+
+  body
+    .container
+      ul.letters
+        for letter, i in 'npm'.split('')
+          li(class=letter)
+            input(placeholder=letter+" words" name=letter tabindex=i+1)
+            ul.words

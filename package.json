@@ -1,0 +1,32 @@
+{
+  "name": "n-p-m",
+  "version": "1.0.0",
+  "description": "What does n-p-m stand for?",
+  "main": "index.js",
+  "bin": {
+    "n-p-m": "build.js"
+  },
+  "scripts": {
+    "build": "./bin/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeke/n-p-m"
+  },
+  "keywords": [
+    "npm",
+    "acronym",
+    "name",
+    "naming-is-hard",
+    "fun"
+  ],
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeke/n-p-m/issues"
+  },
+  "homepage": "https://github.com/zeke/n-p-m",
+  "dependencies": {
+    "an-array-of-english-words": "^1.0.0"
+  }
+}
