@@ -20,14 +20,21 @@ html
 
           $(document).on("keyup change", "input", function(event){
             var q = $(this).val()
-            if (!q) return
+            var letter = $(this).attr('name')
+            var wordList = $("ul.letters li."+letter+" ul.words")
+
+            if (!q) {
+              wordList.html("")
+              return
+            }
+
             var letter = $(this).attr('name')
             var pattern = new RegExp("^"+q, "i")
             var results = words[letter]
               .filter(function(w){return !!w.match(pattern)})
               .slice(0,10);
             //- console.log(results)
-            $("ul.letters li."+letter+" ul.words").html(results.map(function(word){
+            wordList.html(results.map(function(word){
               return "<li><a href=\"#\">" + word + "</a></li>"
             }))
           })
