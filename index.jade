@@ -47,5 +47,5 @@ html
       ul.letters
         for letter, i in 'npm'.split('')
           li(class=letter)
-            input(placeholder=letter+" words" name=letter tabindex=i+1)
+            input(placeholder=letter+" words" name=letter tabindex=i+1 autofocus=(i?"":"autofocus"))
             ul.words
